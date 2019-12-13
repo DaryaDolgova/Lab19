@@ -1,0 +1,50 @@
+using namespace std;
+
+#include <iostream>
+
+int main() 
+{
+
+	int  M, w, i, j,  s, z;
+
+	cout << "M="; cin >> M;
+
+	int** A = new int* [M];
+
+	for (i = 0; i < M; i++) 
+	{
+		A[i] = new int[M];
+		for (j = 0; j < M; j++) 
+		{
+			cin >> A[i][j];
+		}
+	}
+
+	z = M; s= 0;
+
+	int* B = new int[M * 2 - 1];
+	
+	for (w = 0; w < M * 2 - 1; w++) 
+	{
+		for (i = 0; i < M; i++)
+		{
+			for (j = 0; j < M; j++) 
+			{
+				if (i == j + z - 1)
+				{
+					s += A[i][j];
+				}
+			}
+		}
+		B[w] = s;
+		s = 0;
+		z--;
+	}
+
+	for (w = 0; w < M * 2 - 1; w++) {
+		cout <<  w <<" "<< B[w] << endl;
+	}
+
+	return 0;
+
+}
