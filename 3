@@ -1,0 +1,43 @@
+using namespace std;
+
+#include <iostream>
+
+int main() {
+
+	int N, M, i, j, w;
+
+	cout << "M="; cin >> M;
+	cout << "N="; cin >> N;
+	int** A = new int* [M];
+
+	for (i = 0; i < M; i++) 
+	{
+		A[i] = new int[N];
+		for (j = 0; j < N; j++) 
+		{
+			cin >> A[i][j];
+		}
+	}
+	for (i = 0; i < M / 2; i++) 
+	{
+		for (j = 0; j < N / 2; j++) 
+		{
+					w = A[i][j];
+					A[i][j] = A[M/2+i][N/2+j];
+					A[M/2+i][N/2+j] = w;
+		}
+	}
+
+	for (i = 0; i < M; i++) 
+	{
+		for (j = 0; j < N; j++) 
+		{
+			cout << A[i][j] << "\t";
+			if (j  == N-1)
+				cout << endl;
+		}
+	}
+
+	return 0;
+
+}
