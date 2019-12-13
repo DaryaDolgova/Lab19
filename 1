@@ -1,0 +1,47 @@
+using namespace std;
+
+#include <iostream>
+
+int main() 
+{
+	int N, M, i, j, min, max, mi, ma;
+
+	cout << "M="; cin >> M;
+	cout << "N="; cin >> N;
+	int** A = new int* [M];
+
+	min = 9999999; max = 0;
+	for (i = 1; i <= M; i++) 
+	{
+		A[i] = new int[N];
+		for (j = 1; j <= N; j++) 
+		{
+			cin >> A[i][j];
+		}
+	}
+
+	for (i = 1; i <= M; i++) 
+	{
+		for (j = 1; j <= N; j++) 
+		{
+		    if (A[i][j] > max) { ma = j; max = A[i][j]; }
+			if (A[i][j] < min) { mi = j; min = A[i][j]; }
+		}
+		A[i][ma] = min;
+		A[i][mi] = max;
+		min = 999999; max = 0;
+	}
+
+	for (i = 1; i <= M; i++) 
+	{
+		for (j = 1; j <= N; j++) 
+		{
+			cout << A[i][j] << "\t";
+			if (j % N == 0)
+				cout << endl;
+		}
+	}
+
+	return 0;
+
+}
