@@ -8,18 +8,16 @@ int main()
 
 	cout << "M="; cin >> M;
 	cout << "N="; cin >> N;
-	int** A = new int* [M];
+		int A[M][N];
+for (i = 0; i < M; i++)
+{
+for (j = 0; j < N; j++)
+{
+cin >> A[i][j];
+}
+cout << endl;
+}
 	max = 0; min = 9999999;
-
-	for (i = 1; i <= M; i++) 
-	{
-		A[i] = new int[N];
-		for (j = 1; j <= N; j++) 
-		{
-			cin >> A[i][j];
-		}
-	}
-
 	for (i = 1; i <= M; i++) 
 	{
 		for (j = 1; j <= N; j++) 
