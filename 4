@@ -10,16 +10,16 @@ int main()
 	cout << "N="; cin >> N;
 	cout << "M="; cin >> M;
 
-	int** A = new int* [M];
+	int A[M][N];
 
-	for (i = 0; i < M; i++) 
-	{
-		A[i] = new int[N];
-		for (j = 0; j < N; j++) 
-		{
-			cin >> A[i][j];
-		}
-	}
+for (i = 0; i < M; i++)
+{
+for (j = 0; j < N; j++)
+{
+cin >> A[i][j];
+}
+cout << endl;
+}
 
 	for (x = 0; x < M; x++) 
 	{
