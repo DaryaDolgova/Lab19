@@ -9,16 +9,16 @@ int main()
 
 	cout << "M="; cin >> M;
 
-	int** A = new int* [M];
+	int A[M][M];
 
-	for (i = 0; i < M; i++) 
-	{
-		A[i] = new int[M];
-		for (j = 0; j < M; j++) 
-		{
-			cin >> A[i][j];
-		}
-	}
+for (i = 0; i < M; i++)
+{
+for (j = 0; j < M; j++)
+{
+cin >> A[i][j];
+}
+cout << endl;
+}
 
 	z = M; s= 0;
 
