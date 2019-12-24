@@ -18,9 +18,9 @@ cin >> A[i][j];
 cout << endl;
 }
 	max = 0; min = 9999999;
-	for (i = 1; i <= M; i++) 
+	for (i = 0; i < M; i++) 
 	{
-		for (j = 1; j <= N; j++) 
+		for (j = 0; j < N; j++) 
 		{
 		    if (A[i][j] > max) { max = A[i][j]; ma = j; }
 			if (A[i][j] < min) { min = A[i][j]; mi = j; }
@@ -29,16 +29,16 @@ cout << endl;
 
 	cout << "MAX= " << max << endl;
 	cout << "MIN= " << min << endl;
-	for (i = 1; i <= M; i++) 
+	for (i = 0; i < M; i++) 
 	{
 			w = A[i][mi];
 			A[i][mi] = A[i][ma];
 			A[i][ma] = w;
 	}
 
-	for (i = 1; i <= M; i++) 
+	for (i = 0; i < M; i++) 
 	{
-		for (j = 1; j <= N; j++) 
+		for (j = 0; j < N; j++) 
 		{
 			cout << A[i][j] << "\t";
 			if (j % N == 0)
